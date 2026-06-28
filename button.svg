@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" width="260" height="52">
+  <defs>
+    <linearGradient id="btnBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#21262d;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="btnAccentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#39d353;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="btnShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <clipPath id="titleClip">
+      <rect x="58" y="26" width="158" height="20"/>
+    </clipPath>
+    <clipPath id="subtitleClip">
+      <rect x="58" y="8" width="158" height="16"/>
+    </clipPath>
+  </defs>
+
+  <!-- Button body -->
+  <g filter="url(#btnShadow)">
+    <rect x="1.5" y="1.5" width="257" height="49" rx="10" fill="url(#btnBgGrad)" stroke="#30363d" stroke-width="1"/>
+  </g>
+
+  <!-- Left accent stripe -->
+  <rect x="1.5" y="1.5" width="3" height="49" rx="1.5" fill="url(#btnAccentGrad)"/>
+
+  <!-- Download icon (arrow into tray) -->
+  <g transform="translate(18, 14)">
+    <line x1="12" y1="0" x2="12" y2="14" stroke="url(#btnAccentGrad)" stroke-width="2.5" stroke-linecap="round"/>
+    <polyline points="6,9 12,15 18,9" fill="none" stroke="url(#btnAccentGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="2,20 2,23 22,23 22,20" fill="none" stroke="url(#btnAccentGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Vertical divider -->
+  <line x1="48" y1="14" x2="48" y2="38" stroke="#30363d" stroke-width="1"/>
+
+  <!--
+    Long names: add  textLength="158" lengthAdjust="spacingAndGlyphs"
+    to <text id="projectName"> so letters auto-shrink.
+    Short names render naturally; clip-path is a hard safety net.
+  -->
+
+  <!-- Project name (top) -->
+  <g clip-path="url(#subtitleClip)">
+    <text id="projectName"
+          x="58" y="21"
+          font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="10"
+          font-weight="500"
+          fill="#8b949e"
+          letter-spacing="1.2">hermes-agency-orchestrator</text>
+  </g>
+
+  <!-- Action label -->
+  <g clip-path="url(#titleClip)">
+    <text x="58" y="41"
+          font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="16"
+          font-weight="700"
+          fill="url(#btnAccentGrad)"
+          letter-spacing="-0.2">Download Latest</text>
+  </g>
+</svg>
